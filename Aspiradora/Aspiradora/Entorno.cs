@@ -10,11 +10,15 @@ namespace Aspiradora
     public class Entorno
     {
 
-        private static bool[] localizacion = new bool[3];
+        private bool[] localizacion = new bool[3];
+        private int timeGlobal;
+
 
         public Entorno()
         {
-            Random rand = new Random();            
+
+            Random rand = new Random();
+            timeGlobal = 0;
             if (rand.Next(2) == 1) // Limpio
                 localizacion[1] = true;
             else //Sucio
@@ -26,11 +30,15 @@ namespace Aspiradora
                 localizacion[2] = false;
 
         }
-        public static bool estaLimpioEspacio(int indice)
+
+        public int TimeGlobal { get => timeGlobal; set => timeGlobal = value; }
+        public bool[] Localizacion { get => localizacion; set => localizacion = value; }
+
+        public bool estaLimpioEspacio(int indice)
         {            
             return localizacion[indice];
         }
-        public static void limpiarEspacio(int indice)
+        public void limpiarEspacio(int indice)
         {
             localizacion[indice] = true;
         }

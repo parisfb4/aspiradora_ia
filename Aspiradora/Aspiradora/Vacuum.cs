@@ -22,10 +22,11 @@ namespace Aspiradora
         private bool espacioEncontrado { get; set; } // 1 Limpio o  0 sucio 
         int vidaMax = 200;
         Form1 control;
+        Entorno entorno;
 
         public bool estaLimpio()
         {
-            return Entorno.estaLimpioEspacio(ubicacionEntorno);
+            return entorno.estaLimpioEspacio(ubicacionEntorno);
         }
         #endregion
 
@@ -38,10 +39,12 @@ namespace Aspiradora
             //Verificar registro 
 
             //Actualizar datos            
-            Entorno.limpiarEspacio(ubicacionEntorno);
+            entorno.limpiarEspacio(ubicacionEntorno);
 
             //Actualziar Imagenes
             control.ImagenesSectores();
+            Thread.Sleep(1000);
+
 
             //Moverse
             escogerMoverse();
@@ -52,16 +55,11 @@ namespace Aspiradora
             ubicacionEntorno = 0; //En modo de carga
 
             //Control de posicion
-            control.PosicionActual(ubicacionEntorno);
+            //control.PosicionActual(ubicacionEntorno);
             control.PosicionActual(0);
 
             if(movimientos < 10)
             {
-                //Timer 0 = Cargar
-                if (movimientos == 5)
-                {
-                    return;
-                }
 
                 movimientos = control.ActualizarBateria(movimientos, 0);
                 //movimientos = 10;
@@ -72,8 +70,6 @@ namespace Aspiradora
                 return;
             }
 
-            Thread.Sleep(5000);
-
             escogerMoverse();
 
             //Esta parte es la final del programa
@@ -83,11 +79,12 @@ namespace Aspiradora
             //Moverse a la posición donde no estuvo            
             if(ubicacionEntorno == 0) //centro de carga
             {
-                if(registro[0] == 0)
+                Random rnd = new Random();
+                if (registro[0] == 0)
                 {
                     registro[0] = 0;
                     registro[1] = band_limpio;
-                    moverse(1);
+                    moverse(rnd.Next(1,3));
                     //Random para ir a o a b
                 }
                 if(registro[0] == 1)  //viene de a
@@ -173,11 +170,10 @@ namespace Aspiradora
 
 
             //Verificar locacion
-            if (!Entorno.estaLimpioEspacio(ubicacionEntorno))
+            if (!entorno.estaLimpioEspacio(ubicacionEntorno))
             {
                 band_limpio = 1;
                 limpiar();
-
             }
             else
             {
@@ -188,16 +184,16 @@ namespace Aspiradora
         }
         #endregion
 
-        public Vacuum(object form1)
+        public Vacuum(object form1, object entorno1)
         {
-            movimientos = 10;
+            movimientos = 1;
             ubicacionEntorno = 0; //Estado de carga
             estado = 0; //
-            Random rnd = new Random();
             registro = new int[2]; //Movimiento 
             registro[0] = 0;
             registro[1] = 0;
             control = (Form1)form1;
+            entorno = (Entorno)entorno1;
         }
     }
 }
