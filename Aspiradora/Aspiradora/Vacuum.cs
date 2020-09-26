@@ -74,6 +74,8 @@ namespace Aspiradora
 
             Thread.Sleep(5000);
 
+            //Funcion
+
             escogerMoverse();
 
             //Esta parte es la final del programa
