@@ -97,7 +97,7 @@ namespace Aspiradora
         //Boton Comenzar
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            ImagenesSectores();
             aspirar.cargar();
 
             MessageBox.Show("Finalizado", "Estatus");

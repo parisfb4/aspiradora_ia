@@ -7,6 +7,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Aspiradora
 {
@@ -21,6 +22,11 @@ namespace Aspiradora
         private int ubicacionEntorno { get; set; } // si es estado de carga, a o b
         private bool espacioEncontrado { get; set; } // 1 Limpio o  0 sucio 
         int vidaMax = 200;
+        int contador;
+        int opcion;
+        bool bandera1 = false;
+        Random rnd;
+
         Form1 control;
         Entorno entorno;
 
@@ -36,7 +42,9 @@ namespace Aspiradora
 
         public void limpiar()
         {
-            //Verificar registro 
+            //Actualizar bateria
+            movimientos--;
+            control.ActualizarBateria(movimientos, 1);
 
             //Actualizar datos            
             entorno.limpiarEspacio(ubicacionEntorno);
@@ -51,6 +59,7 @@ namespace Aspiradora
         }
         public void cargar()
         {
+            MessageBox.Show("Entro a Cargar");
             //Verificar movimientos
             ubicacionEntorno = 0; //En modo de carga
 
@@ -70,7 +79,14 @@ namespace Aspiradora
                 return;
             }
 
-            Thread.Sleep(5000);
+            //Funcion Stand By
+            if(movimientos == 10 && entorno.estaLimpioEspacio(1) && entorno.estaLimpioEspacio(2))
+            {
+                //Si la bateria esta cargada
+                //Si el espacio en A esta limpio
+                //Si el espacio en B esta limpio
+                standby();
+            }
 
             escogerMoverse();
 
@@ -115,6 +131,8 @@ namespace Aspiradora
                 {
                     registro[0] = 2;
                     registro[1] = band_limpio;
+                    movimientos--;
+                    control.ActualizarBateria(movimientos, 1);
                     cargar();
                 }
             }
@@ -130,6 +148,8 @@ namespace Aspiradora
                 {
                     registro[0] = 2;
                     registro[1] = band_limpio;
+                    movimientos--;
+                    control.ActualizarBateria(movimientos, 1);
                     cargar();
                 }
             }
@@ -151,6 +171,29 @@ namespace Aspiradora
         public void standby()
         {
             //No tengo nada que hacer
+            MessageBox.Show("Estoy esperando a que se ensucie", "Estatus");
+
+            //Timer artificial
+            do
+            {
+                contador++;
+                Thread.Sleep(1000);
+
+            } while (contador < rnd.Next(2, 5));
+
+            bandera1 = false;
+
+            while (bandera1 == false)
+            {
+                //Cambiar estados de limpieza para A
+                opcion = rnd.Next(1, 3);
+                if (entorno.estaLimpioEspacio(opcion))
+                {
+                    entorno.Localizacion[opcion] = false;
+                    bandera1 = true;
+                }
+            }
+            control.ImagenesSectores();
         }
         public void moverse(int posicion)
         {
@@ -196,6 +239,9 @@ namespace Aspiradora
             registro[1] = 0;
             control = (Form1)form1;
             entorno = (Entorno)entorno1;
+            contador = 0;
+            rnd = new Random();
+            opcion = 0;
         }
     }
 }
