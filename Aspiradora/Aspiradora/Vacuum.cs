@@ -94,6 +94,8 @@ namespace Aspiradora
         }
         public void escogerMoverse()
         {
+            System.Windows.Forms.Application.DoEvents();
+            if (!control.Encendido) return;
             //Moverse a la posición donde no estuvo            
             if(ubicacionEntorno == 0) //centro de carga
             {

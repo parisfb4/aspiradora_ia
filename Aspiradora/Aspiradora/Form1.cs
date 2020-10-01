@@ -20,7 +20,10 @@ namespace Aspiradora
         Vacuum aspirar;
         Entorno entorno;
         Random rnd;
+        bool encendido;
         int aleatorio;
+
+        public bool Encendido { get => encendido; set => encendido = value; }
 
         public Form1()
         {
@@ -29,6 +32,7 @@ namespace Aspiradora
             aspirar = new Vacuum(this, entorno);
             rnd = new Random();
             aleatorio =  rnd.Next(13,15);
+            encendido = true;
         }
 
         //Bateria
@@ -90,6 +94,8 @@ namespace Aspiradora
                     }
                 }
                 batteries.Refresh();
+                System.Windows.Forms.Application.DoEvents();
+                if (!encendido) return;
             } while (bateria >= 1 && bateria < 10);
             
         }
@@ -97,10 +103,23 @@ namespace Aspiradora
         //Boton Comenzar
         private void button1_Click(object sender, EventArgs e)
         {
-            ImagenesSectores();
-            aspirar.cargar();
+            if (button1.Text == "Comenzar")
+            {
+                encendido = true;
+                ImagenesSectores();
+                button1.Text = "Apagar";
+                aspirar.escogerMoverse();
+                //pedirdatos();
+            }
+            else if(button1.Text == "Apagar")
+            {
+                encendido = false;
+                button1.Text = "Comenzar";
+                MessageBox.Show("Finalizado", "Estatus");
+                //puntuacion();
+            }
 
-            MessageBox.Show("Finalizado", "Estatus");
+            
         }
 
         //Actualizar Bateria
@@ -310,5 +329,7 @@ namespace Aspiradora
         {
 
         }
+
+
     }
 }
