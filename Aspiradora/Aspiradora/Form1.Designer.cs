@@ -64,6 +64,7 @@ namespace Aspiradora
             this.Basura1A = new System.Windows.Forms.PictureBox();
             this.Basura3A = new System.Windows.Forms.PictureBox();
             this.Basura2A = new System.Windows.Forms.PictureBox();
+            this.Finalizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Bateria10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bateria9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bateria8)).BeginInit();
@@ -248,7 +249,7 @@ namespace Aspiradora
             this.button1.BackColor = System.Drawing.Color.DarkCyan;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1091, 449);
+            this.button1.Location = new System.Drawing.Point(1002, 425);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 49);
             this.button1.TabIndex = 26;
@@ -269,7 +270,7 @@ namespace Aspiradora
             this.batteries.Controls.Add(this.Bateria7);
             this.batteries.Controls.Add(this.Bateria6);
             this.batteries.Location = new System.Drawing.Point(103, 10);
-            this.batteries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.batteries.Margin = new System.Windows.Forms.Padding(2);
             this.batteries.Name = "batteries";
             this.batteries.Size = new System.Drawing.Size(152, 118);
             this.batteries.TabIndex = 34;
@@ -367,7 +368,7 @@ namespace Aspiradora
             this.information.Controls.Add(this.label4);
             this.information.Controls.Add(this.label6);
             this.information.Location = new System.Drawing.Point(966, 221);
-            this.information.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.information.Margin = new System.Windows.Forms.Padding(2);
             this.information.Name = "information";
             this.information.Size = new System.Drawing.Size(345, 147);
             this.information.TabIndex = 35;
@@ -471,6 +472,20 @@ namespace Aspiradora
             this.Basura2A.TabIndex = 32;
             this.Basura2A.TabStop = false;
             // 
+            // Finalizar
+            // 
+            this.Finalizar.BackColor = System.Drawing.Color.DarkCyan;
+            this.Finalizar.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Finalizar.ForeColor = System.Drawing.Color.White;
+            this.Finalizar.Location = new System.Drawing.Point(1171, 425);
+            this.Finalizar.Name = "Finalizar";
+            this.Finalizar.Size = new System.Drawing.Size(121, 49);
+            this.Finalizar.TabIndex = 39;
+            this.Finalizar.Text = "Finalizar";
+            this.Finalizar.UseVisualStyleBackColor = false;
+            this.Finalizar.Visible = false;
+            this.Finalizar.Click += new System.EventHandler(this.Finalizar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,6 +494,7 @@ namespace Aspiradora
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1320, 544);
+            this.Controls.Add(this.Finalizar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.information);
             this.Controls.Add(this.Basura3A);
@@ -557,6 +573,7 @@ namespace Aspiradora
         private PictureBox Basura1A;
         private PictureBox Basura3A;
         private PictureBox Basura2A;
+        private Button Finalizar;
     }
 }
 

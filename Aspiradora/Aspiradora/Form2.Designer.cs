@@ -48,7 +48,7 @@
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(145, 228);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 48);
             this.button1.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.radioCarga.Cursor = System.Windows.Forms.Cursors.Default;
             this.radioCarga.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioCarga.Location = new System.Drawing.Point(89, 93);
-            this.radioCarga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioCarga.Margin = new System.Windows.Forms.Padding(2);
             this.radioCarga.Name = "radioCarga";
             this.radioCarga.Size = new System.Drawing.Size(103, 20);
             this.radioCarga.TabIndex = 2;
@@ -89,7 +89,7 @@
             this.radioA.Enabled = false;
             this.radioA.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioA.Location = new System.Drawing.Point(205, 93);
-            this.radioA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioA.Margin = new System.Windows.Forms.Padding(2);
             this.radioA.Name = "radioA";
             this.radioA.Size = new System.Drawing.Size(65, 20);
             this.radioA.TabIndex = 3;
@@ -102,7 +102,7 @@
             this.radioB.Enabled = false;
             this.radioB.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioB.Location = new System.Drawing.Point(297, 93);
-            this.radioB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioB.Margin = new System.Windows.Forms.Padding(2);
             this.radioB.Name = "radioB";
             this.radioB.Size = new System.Drawing.Size(64, 20);
             this.radioB.TabIndex = 4;
@@ -138,7 +138,7 @@
             this.numMov.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numMov.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numMov.Location = new System.Drawing.Point(182, 30);
-            this.numMov.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numMov.Margin = new System.Windows.Forms.Padding(2);
             this.numMov.Minimum = new decimal(new int[] {
             1,
             0,
@@ -160,7 +160,7 @@
             this.chA.AutoSize = true;
             this.chA.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chA.Location = new System.Drawing.Point(131, 180);
-            this.chA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chA.Margin = new System.Windows.Forms.Padding(2);
             this.chA.Name = "chA";
             this.chA.Size = new System.Drawing.Size(66, 20);
             this.chA.TabIndex = 9;
@@ -172,7 +172,7 @@
             this.chB.AutoSize = true;
             this.chB.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chB.Location = new System.Drawing.Point(237, 180);
-            this.chB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chB.Margin = new System.Windows.Forms.Padding(2);
             this.chB.Name = "chB";
             this.chB.Size = new System.Drawing.Size(65, 20);
             this.chB.TabIndex = 10;
@@ -195,7 +195,7 @@
             this.Controls.Add(this.radioCarga);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Datos";
             ((System.ComponentModel.ISupportInitialize)(this.numMov)).EndInit();

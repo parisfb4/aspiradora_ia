@@ -33,6 +33,7 @@ namespace Aspiradora
         Vacuum aspirar;
         Entorno entorno;
         Form2 datos;
+        Resultados resultados = new Resultados();
         bool encendido;
 
         public bool Encendido { get => encendido; set => encendido = value; }
@@ -59,6 +60,7 @@ namespace Aspiradora
             ActualizarBateria(datos.Movimientos, 3);
             ImagenesSectores();
             PosicionActual(datos.Zona);
+            actualizar_datos(1);//Posicion inicial
         }
 
         //Bateria
@@ -134,8 +136,8 @@ namespace Aspiradora
                 //pedirdatos();
                 encendido = true;
                 ImagenesSectores();
-                actualizar_datos(1);//Posicion inicial
                 button1.Text = "Apagar";
+                Finalizar.Visible = false;
                 aspirar.escogerMoverse();
             }
             else if(button1.Text == "Apagar")
@@ -143,6 +145,7 @@ namespace Aspiradora
                 encendido = false;
                 button1.Text = "Comenzar";
                 MessageBox.Show("Finalizado", "Estatus");
+                Finalizar.Visible = true;
                 actualizar_datos(2); // Posicion final
             }
 
@@ -367,6 +370,9 @@ namespace Aspiradora
             else if(valor == 2) // Posicion Final
             {
                 posicion_final = Posicion.Text;
+
+                rendimiento_parcial = ( Convert.ToDouble(limpiezas_realizadas) / Convert.ToDouble(movimientos_realizados) );
+
                 archivo();
             }
         }
@@ -375,10 +381,22 @@ namespace Aspiradora
         private void archivo()
         {
             //Abrir archivo
-            File.ReadAllLines("./Archivos/Puntuaciones.csv"); //Retorna un arreglo de strings
+            string cadena = "";
+            string ruta = @"C:\Users\omara\OneDrive - Universidad de Guadalajara\Desktop\2020-B\INTELIGENCIA ARTIFICIAL\Practica02\Codigo\aspiradora_ia\Aspiradora\Aspiradora\hola.csv";
+            string separador = ",";
+            StringBuilder salida = new StringBuilder();
+
+            List<String> lista = new List<String>();
+
+            //Valores a escribir
+            cadena = ID.ToString() + "," + posicion_inicial + "," +
+                posicion_final + "," + movimientos_realizados.ToString() + "," +
+                limpiezas_realizadas.ToString() + "," + rendimiento_parcial.ToString();
+            lista.Add(cadena);
 
             //Escribir en el archivo
-
+            salida.AppendLine(string.Join(separador, lista[0]));
+            File.AppendAllText(ruta, salida.ToString());
 
             //Incrementar ID
             ID++;
@@ -391,6 +409,17 @@ namespace Aspiradora
             rendimiento_parcial = 0.00;
             movimientos_realizados = 0;
             limpiezas_realizadas = 0;
+
+            //lista.Clear();
+        }
+
+        private void Finalizar_Click(object sender, EventArgs e)
+        {
+            //Llamar al form 3 de mostrar informacion
+            media_global = (media_global / Convert.ToDouble(ID)) * 100;
+
+            resultados.datos(media_global);
+            resultados.Show();
         }
     }
 }
