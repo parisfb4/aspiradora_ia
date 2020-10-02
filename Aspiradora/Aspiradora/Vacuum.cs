@@ -99,10 +99,13 @@ namespace Aspiradora
             System.Windows.Forms.Application.DoEvents();
             if (!control.Encendido) return;
             //Moverse a la posición donde no estuvo            
-            if(ubicacionEntorno == 0) //centro de carga
+            if (ubicacionEntorno == 0) //centro de carga
             {
                 Random rnd = new Random();
-                if (registro[0] == 0)
+                moverse(rnd.Next(1, 3));
+
+                #region carga con registro
+                /*if (registro[0] == 0)
                 {
                     registro[0] = 0;
                     registro[1] = band_limpio;
@@ -120,12 +123,16 @@ namespace Aspiradora
                     registro[0] = 0;
                     registro[1] = band_limpio;
                     moverse(1);
-                }
+                } */
+                #endregion
 
             }
             else if (ubicacionEntorno == 1)
             {
-                if (registro[0] == 0)  //viene de carga
+                Random rnd = new Random();
+                moverse(2);
+                #region a con registro 
+                /* if (registro[0] == 0)  //viene de carga
                 {
                     registro[0] = 1;
                     registro[1] = band_limpio;
@@ -136,44 +143,38 @@ namespace Aspiradora
                     registro[0] = 2;
                     registro[1] = band_limpio;
                     movimientos--;
-                    control.Movimientos_realizados++;
                     control.ActualizarBateria(movimientos, 1);
                     cargar();
                 }
+                */
+                #endregion
             }
             else if (ubicacionEntorno == 2)
             {
-                if (registro[0] == 0)  //viene de carga
-                {
-                    registro[0] = 2;
-                    registro[1] = band_limpio;
-                    moverse(1);
-                }
-                else if (registro[0] == 1)// Viene de a
-                {
-                    registro[0] = 2;
-                    registro[1] = band_limpio;
-                    movimientos--;
-                    control.Movimientos_realizados++;
-                    control.ActualizarBateria(movimientos, 1);
-                    cargar();
-                }
+                moverse(1);
+                #region b con registro
+                /* if (registro[0] == 0)  //viene de carga
+               {
+                   registro[0] = 2;
+                   registro[1] = band_limpio;
+                   moverse(1);
+               }
+               else if (registro[0] == 1)// Viene de a
+               {
+                   registro[0] = 2;
+                   registro[1] = band_limpio;
+                   movimientos--;
+                   control.ActualizarBateria(movimientos, 1);
+                   cargar();
+               }
+                */
+                #endregion
             }
-            //Si esta en a
-            //Si registro estuvo en b                
-            //Si a estaba limpio
-            //Sino
-            //Si registro estuvo en carga
-            //Si esta en b
-            //Si registro estuvo en a
-            //Si registro estuvo en b
 
-            //Si está en carga
-            //Si registro estuvo en a
-            //Si registro estuvo en b
-         
-            
+
+
         }
+
         public void standby()
         {
             //No tengo nada que hacer
