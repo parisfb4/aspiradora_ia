@@ -119,7 +119,7 @@ namespace Aspiradora
             this.Bateria10.BackColor = System.Drawing.Color.Transparent;
             this.Bateria10.Image = ((System.Drawing.Image)(resources.GetObject("Bateria10.Image")));
             this.Bateria10.Location = new System.Drawing.Point(15, 7);
-            this.Bateria10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria10.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria10.Name = "Bateria10";
             this.Bateria10.Size = new System.Drawing.Size(66, 99);
             this.Bateria10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -132,7 +132,7 @@ namespace Aspiradora
             this.Bateria9.BackColor = System.Drawing.Color.Transparent;
             this.Bateria9.Image = ((System.Drawing.Image)(resources.GetObject("Bateria9.Image")));
             this.Bateria9.Location = new System.Drawing.Point(15, 7);
-            this.Bateria9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria9.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria9.Name = "Bateria9";
             this.Bateria9.Size = new System.Drawing.Size(66, 99);
             this.Bateria9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -145,7 +145,7 @@ namespace Aspiradora
             this.Bateria8.BackColor = System.Drawing.Color.Transparent;
             this.Bateria8.Image = ((System.Drawing.Image)(resources.GetObject("Bateria8.Image")));
             this.Bateria8.Location = new System.Drawing.Point(15, 7);
-            this.Bateria8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria8.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria8.Name = "Bateria8";
             this.Bateria8.Size = new System.Drawing.Size(66, 99);
             this.Bateria8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -158,7 +158,7 @@ namespace Aspiradora
             this.Bateria7.BackColor = System.Drawing.Color.Transparent;
             this.Bateria7.Image = ((System.Drawing.Image)(resources.GetObject("Bateria7.Image")));
             this.Bateria7.Location = new System.Drawing.Point(15, 7);
-            this.Bateria7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria7.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria7.Name = "Bateria7";
             this.Bateria7.Size = new System.Drawing.Size(66, 99);
             this.Bateria7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -171,7 +171,7 @@ namespace Aspiradora
             this.Bateria6.BackColor = System.Drawing.Color.Transparent;
             this.Bateria6.Image = ((System.Drawing.Image)(resources.GetObject("Bateria6.Image")));
             this.Bateria6.Location = new System.Drawing.Point(15, 7);
-            this.Bateria6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria6.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria6.Name = "Bateria6";
             this.Bateria6.Size = new System.Drawing.Size(66, 99);
             this.Bateria6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -184,7 +184,7 @@ namespace Aspiradora
             this.Bateria5.BackColor = System.Drawing.Color.Transparent;
             this.Bateria5.Image = ((System.Drawing.Image)(resources.GetObject("Bateria5.Image")));
             this.Bateria5.Location = new System.Drawing.Point(15, 7);
-            this.Bateria5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria5.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria5.Name = "Bateria5";
             this.Bateria5.Size = new System.Drawing.Size(66, 99);
             this.Bateria5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -197,7 +197,7 @@ namespace Aspiradora
             this.Bateria4.BackColor = System.Drawing.Color.Transparent;
             this.Bateria4.Image = ((System.Drawing.Image)(resources.GetObject("Bateria4.Image")));
             this.Bateria4.Location = new System.Drawing.Point(15, 7);
-            this.Bateria4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria4.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria4.Name = "Bateria4";
             this.Bateria4.Size = new System.Drawing.Size(66, 99);
             this.Bateria4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -210,7 +210,7 @@ namespace Aspiradora
             this.Bateria3.BackColor = System.Drawing.Color.Transparent;
             this.Bateria3.Image = ((System.Drawing.Image)(resources.GetObject("Bateria3.Image")));
             this.Bateria3.Location = new System.Drawing.Point(15, 7);
-            this.Bateria3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria3.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria3.Name = "Bateria3";
             this.Bateria3.Size = new System.Drawing.Size(66, 99);
             this.Bateria3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -223,7 +223,7 @@ namespace Aspiradora
             this.Bateria2.BackColor = System.Drawing.Color.Transparent;
             this.Bateria2.Image = ((System.Drawing.Image)(resources.GetObject("Bateria2.Image")));
             this.Bateria2.Location = new System.Drawing.Point(15, 7);
-            this.Bateria2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria2.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria2.Name = "Bateria2";
             this.Bateria2.Size = new System.Drawing.Size(66, 99);
             this.Bateria2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -236,7 +236,7 @@ namespace Aspiradora
             this.Bateria1.BackColor = System.Drawing.Color.Transparent;
             this.Bateria1.Image = ((System.Drawing.Image)(resources.GetObject("Bateria1.Image")));
             this.Bateria1.Location = new System.Drawing.Point(15, 7);
-            this.Bateria1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bateria1.Margin = new System.Windows.Forms.Padding(4);
             this.Bateria1.Name = "Bateria1";
             this.Bateria1.Size = new System.Drawing.Size(66, 99);
             this.Bateria1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -262,7 +262,7 @@ namespace Aspiradora
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(1455, 553);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 60);
             this.button1.TabIndex = 26;
@@ -295,7 +295,7 @@ namespace Aspiradora
             this.panel1.Controls.Add(this.INFORMACION);
             this.panel1.Controls.Add(this.batteries);
             this.panel1.Location = new System.Drawing.Point(1288, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 251);
             this.panel1.TabIndex = 38;
@@ -354,16 +354,18 @@ namespace Aspiradora
             // EstatusB
             // 
             this.EstatusB.Location = new System.Drawing.Point(273, 102);
-            this.EstatusB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EstatusB.Margin = new System.Windows.Forms.Padding(4);
             this.EstatusB.Name = "EstatusB";
+            this.EstatusB.ReadOnly = true;
             this.EstatusB.Size = new System.Drawing.Size(109, 22);
             this.EstatusB.TabIndex = 25;
             // 
             // EstatusA
             // 
             this.EstatusA.Location = new System.Drawing.Point(20, 102);
-            this.EstatusA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EstatusA.Margin = new System.Windows.Forms.Padding(4);
             this.EstatusA.Name = "EstatusA";
+            this.EstatusA.ReadOnly = true;
             this.EstatusA.Size = new System.Drawing.Size(109, 22);
             this.EstatusA.TabIndex = 24;
             // 
@@ -371,8 +373,9 @@ namespace Aspiradora
             // 
             this.Posicion.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Posicion.Location = new System.Drawing.Point(149, 25);
-            this.Posicion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Posicion.Margin = new System.Windows.Forms.Padding(4);
             this.Posicion.Name = "Posicion";
+            this.Posicion.ReadOnly = true;
             this.Posicion.Size = new System.Drawing.Size(132, 30);
             this.Posicion.TabIndex = 19;
             // 
@@ -395,7 +398,7 @@ namespace Aspiradora
             // 
             this.AreaB.BackColor = System.Drawing.Color.Transparent;
             this.AreaB.Location = new System.Drawing.Point(843, 469);
-            this.AreaB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AreaB.Margin = new System.Windows.Forms.Padding(4);
             this.AreaB.Name = "AreaB";
             this.AreaB.Size = new System.Drawing.Size(411, 175);
             this.AreaB.TabIndex = 1;
@@ -405,7 +408,7 @@ namespace Aspiradora
             // 
             this.AreaA.BackColor = System.Drawing.Color.Transparent;
             this.AreaA.Location = new System.Drawing.Point(16, 530);
-            this.AreaA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AreaA.Margin = new System.Windows.Forms.Padding(4);
             this.AreaA.Name = "AreaA";
             this.AreaA.Size = new System.Drawing.Size(524, 113);
             this.AreaA.TabIndex = 0;
@@ -417,7 +420,7 @@ namespace Aspiradora
             this.Basura1B.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Basura1B.BackgroundImage")));
             this.Basura1B.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Basura1B.Location = new System.Drawing.Point(843, 469);
-            this.Basura1B.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Basura1B.Margin = new System.Windows.Forms.Padding(4);
             this.Basura1B.Name = "Basura1B";
             this.Basura1B.Size = new System.Drawing.Size(103, 114);
             this.Basura1B.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -429,7 +432,7 @@ namespace Aspiradora
             this.Basura2B.BackColor = System.Drawing.Color.Transparent;
             this.Basura2B.Image = ((System.Drawing.Image)(resources.GetObject("Basura2B.Image")));
             this.Basura2B.Location = new System.Drawing.Point(1021, 544);
-            this.Basura2B.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Basura2B.Margin = new System.Windows.Forms.Padding(4);
             this.Basura2B.Name = "Basura2B";
             this.Basura2B.Size = new System.Drawing.Size(80, 96);
             this.Basura2B.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -444,7 +447,7 @@ namespace Aspiradora
             this.Aspiradora.Cursor = System.Windows.Forms.Cursors.Default;
             this.Aspiradora.ImageLocation = "";
             this.Aspiradora.Location = new System.Drawing.Point(525, 172);
-            this.Aspiradora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Aspiradora.Margin = new System.Windows.Forms.Padding(4);
             this.Aspiradora.Name = "Aspiradora";
             this.Aspiradora.Size = new System.Drawing.Size(184, 308);
             this.Aspiradora.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -456,7 +459,7 @@ namespace Aspiradora
             this.Basura3B.BackColor = System.Drawing.Color.Transparent;
             this.Basura3B.Image = ((System.Drawing.Image)(resources.GetObject("Basura3B.Image")));
             this.Basura3B.Location = new System.Drawing.Point(1152, 469);
-            this.Basura3B.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Basura3B.Margin = new System.Windows.Forms.Padding(4);
             this.Basura3B.Name = "Basura3B";
             this.Basura3B.Size = new System.Drawing.Size(101, 82);
             this.Basura3B.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -469,7 +472,7 @@ namespace Aspiradora
             this.Basura1A.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Basura1A.BackgroundImage")));
             this.Basura1A.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Basura1A.Location = new System.Drawing.Point(456, 544);
-            this.Basura1A.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Basura1A.Margin = new System.Windows.Forms.Padding(4);
             this.Basura1A.Name = "Basura1A";
             this.Basura1A.Size = new System.Drawing.Size(84, 69);
             this.Basura1A.TabIndex = 4;
@@ -480,7 +483,7 @@ namespace Aspiradora
             this.Basura3A.BackColor = System.Drawing.Color.Transparent;
             this.Basura3A.Image = ((System.Drawing.Image)(resources.GetObject("Basura3A.Image")));
             this.Basura3A.Location = new System.Drawing.Point(37, 544);
-            this.Basura3A.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Basura3A.Margin = new System.Windows.Forms.Padding(4);
             this.Basura3A.Name = "Basura3A";
             this.Basura3A.Size = new System.Drawing.Size(97, 84);
             this.Basura3A.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -492,7 +495,7 @@ namespace Aspiradora
             this.Basura2A.BackColor = System.Drawing.Color.Transparent;
             this.Basura2A.Image = ((System.Drawing.Image)(resources.GetObject("Basura2A.Image")));
             this.Basura2A.Location = new System.Drawing.Point(268, 544);
-            this.Basura2A.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Basura2A.Margin = new System.Windows.Forms.Padding(4);
             this.Basura2A.Name = "Basura2A";
             this.Basura2A.Size = new System.Drawing.Size(89, 91);
             this.Basura2A.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -520,7 +523,7 @@ namespace Aspiradora
             this.Controls.Add(this.Basura1B);
             this.Controls.Add(this.AreaB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.Bateria10)).EndInit();

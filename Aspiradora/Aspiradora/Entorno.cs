@@ -10,24 +10,16 @@ namespace Aspiradora
     public class Entorno
     {
 
-        private bool[] localizacion = new bool[3];
+        private bool[] localizacion = {false, false, false};
         private int timeGlobal;
+        Form2 datos;
 
 
-        public Entorno()
+        public Entorno(object data)
         {
-
-            Random rand = new Random();
-            timeGlobal = 0;
-            if (rand.Next(2) == 1) // Limpio
-                localizacion[1] = true;
-            else //Sucio
-                localizacion[1] = false;
-            
-            if (rand.Next(2) == 1)
-                localizacion[2] = true;
-            else
-                localizacion[2] = false;
+            datos = (Form2)data;
+            localizacion[1] = !datos.Sucios[0];
+            localizacion[2] = !datos.Sucios[1];
 
         }
 

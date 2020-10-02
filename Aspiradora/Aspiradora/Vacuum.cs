@@ -28,6 +28,7 @@ namespace Aspiradora
         Random rnd;
 
         Form1 control;
+        Form2 datos;
         Entorno entorno;
 
         public bool estaLimpio()
@@ -231,16 +232,17 @@ namespace Aspiradora
         }
         #endregion
 
-        public Vacuum(object form1, object entorno1)
+        public Vacuum(object form1, object entorno1, object data)
         {
-            movimientos = 1;
-            ubicacionEntorno = 0; //Estado de carga
+            control = (Form1)form1;
+            entorno = (Entorno)entorno1;
+            datos = (Form2)data;
+            movimientos = datos.Movimientos;
+            ubicacionEntorno = datos.Zona; //Estado en donde ingreso el usuario
             estado = 0; //
             registro = new int[2]; //Movimiento 
             registro[0] = 0;
             registro[1] = 0;
-            control = (Form1)form1;
-            entorno = (Entorno)entorno1;
             contador = 0;
             rnd = new Random();
             opcion = 0;
