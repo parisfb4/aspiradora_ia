@@ -45,6 +45,8 @@ namespace Aspiradora
         {
             //Actualizar bateria
             movimientos--;
+            control.Movimientos_realizados++;
+            control.Limpiezas_realizadas++;
             control.ActualizarBateria(movimientos, 1);
 
             //Actualizar datos            
@@ -70,7 +72,6 @@ namespace Aspiradora
 
             if(movimientos < 10)
             {
-
                 movimientos = control.ActualizarBateria(movimientos, 0);
                 //movimientos = 10;
             }
@@ -135,6 +136,7 @@ namespace Aspiradora
                     registro[0] = 2;
                     registro[1] = band_limpio;
                     movimientos--;
+                    control.Movimientos_realizados++;
                     control.ActualizarBateria(movimientos, 1);
                     cargar();
                 }
@@ -152,6 +154,7 @@ namespace Aspiradora
                     registro[0] = 2;
                     registro[1] = band_limpio;
                     movimientos--;
+                    control.Movimientos_realizados++;
                     control.ActualizarBateria(movimientos, 1);
                     cargar();
                 }
@@ -203,6 +206,7 @@ namespace Aspiradora
 
             movimientos--;
             vidaMax--;
+            control.Movimientos_realizados++;
             //Cambiar la imagen de la bateria
             control.ActualizarBateria(movimientos, 1);
             //Posision actual de la aspiradora

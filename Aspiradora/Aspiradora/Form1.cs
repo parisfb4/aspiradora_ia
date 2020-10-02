@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -17,16 +18,39 @@ namespace Aspiradora
         private int bateria = 1;
         #endregion
 
+        #region Puntuaciones
+        private int ID; //Numero de configuracion
+        private int movimientos_realizados; //Movimientos realizados desde que inicia hasta que el usuario la apaga o termina su ejecucion. 
+        private int limpiezas_realizadas; //Limpiezas realizadas en una corrida
+
+        private double rendimiento_parcial; //Rendimiento por corrida Limpiezas realizadas / movimientos realizados
+        private double media_global; //Media de todo el rendimiento de la aspiradora (rendimientos / no. configuraciones) * 100
+
+        private string posicion_inicial; //Sector donde comienza la aspiradora
+        private string posicion_final; //Sector donde finalizo la aspiradora
+        #endregion
+
         Vacuum aspirar;
         Entorno entorno;
         Form2 datos;
         bool encendido;
 
         public bool Encendido { get => encendido; set => encendido = value; }
+        public int Movimientos_realizados { get => movimientos_realizados; set => movimientos_realizados = value; }
+        public int Limpiezas_realizadas { get => limpiezas_realizadas; set => limpiezas_realizadas = value; }
 
         public Form1()
         {
             InitializeComponent();
+            //Inicializar datos de puntuacion
+            ID = 1;
+            movimientos_realizados = 0;
+            limpiezas_realizadas = 0;
+            rendimiento_parcial = 0.00;
+            media_global = 0.00;
+            posicion_inicial = "";
+            posicion_final = "";
+
             datos = new Form2();
             datos.ShowDialog();
             entorno = new Entorno(datos);
@@ -110,6 +134,7 @@ namespace Aspiradora
                 //pedirdatos();
                 encendido = true;
                 ImagenesSectores();
+                actualizar_datos(1);//Posicion inicial
                 button1.Text = "Apagar";
                 aspirar.escogerMoverse();
             }
@@ -118,7 +143,7 @@ namespace Aspiradora
                 encendido = false;
                 button1.Text = "Comenzar";
                 MessageBox.Show("Finalizado", "Estatus");
-                //puntuacion();
+                actualizar_datos(2); // Posicion final
             }
 
             
@@ -331,12 +356,41 @@ namespace Aspiradora
             }
         }
 
-        //Control del programa
-        private void Control()
+        //Actualizar Datos
+        private void actualizar_datos(int valor)
         {
-
+            if(valor == 1) //Posicion Inicial
+            {
+                //Actualizar posicion_inicial
+                posicion_inicial = Posicion.Text;
+            }
+            else if(valor == 2) // Posicion Final
+            {
+                posicion_final = Posicion.Text;
+                archivo();
+            }
         }
 
+        //Escribir en el archivo csv
+        private void archivo()
+        {
+            //Abrir archivo
+            File.ReadAllLines("./Archivos/Puntuaciones.csv"); //Retorna un arreglo de strings
 
+            //Escribir en el archivo
+
+
+            //Incrementar ID
+            ID++;
+            //Sumar rendimiento a media_global
+            media_global += rendimiento_parcial;
+
+            //Restablecer valores
+            posicion_final = "";
+            posicion_inicial = "";
+            rendimiento_parcial = 0.00;
+            movimientos_realizados = 0;
+            limpiezas_realizadas = 0;
+        }
     }
 }
