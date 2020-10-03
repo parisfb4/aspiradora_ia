@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Aspiradora
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         #region Bateria
         private int bateria = 1;
@@ -33,7 +33,7 @@ namespace Aspiradora
 
         Vacuum aspirar;
         Entorno entorno;
-        Form2 datos;
+        Datos datos;
         Resultados resultados = new Resultados();
         bool encendido;
 
@@ -41,7 +41,7 @@ namespace Aspiradora
         public int Movimientos_realizados { get => movimientos_realizados; set => movimientos_realizados = value; }
         public int Limpiezas_realizadas { get => limpiezas_realizadas; set => limpiezas_realizadas = value; }
 
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             //Inicializar datos de puntuacion
@@ -54,15 +54,14 @@ namespace Aspiradora
             posicion_inicial = "";
             posicion_final = "";
 
-            datos = new Form2();
-            datos.ShowDialog();
-            entorno = new Entorno(datos);
-            aspirar = new Vacuum(this, entorno, datos);
+            datos = new Datos();
+            entorno = new Entorno();
+            aspirar = new Vacuum(this, entorno);
             encendido = true;
             ActualizarBateria(datos.Movimientos, 3);
             ImagenesSectores();
             PosicionActual(datos.Zona);
-            actualizar_datos(1);//Posicion inicial
+
         }
 
         //Bateria
@@ -131,27 +130,39 @@ namespace Aspiradora
         }
 
         //Boton Comenzar
-        private void button1_Click(object sender, EventArgs e)
+        private void Comenzar_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Comenzar")
+            if (Comenzar.Text == "Comenzar")
             {
                 //pedirdatos();
-                encendido = true;
-                ImagenesSectores();
-                button1.Text = "Apagar";
+                Comenzar.Text = "Apagar";
                 Finalizar.Visible = false;
+                encendido = true;
+                datos.Sucios[0] = false;
+                datos.Sucios[1] = false;
+                datos.ShowDialog();
+                entorno.Localizacion[1] = !datos.Sucios[0];//Zona de A si esta sucio o limpio
+                entorno.Localizacion[2] = !datos.Sucios[1];//Zona de B si esta sucio o limpio
+                aspirar.UbicacionEntorno = datos.Zona;//Determina donde esta la Aspiradora
+                aspirar.Movimientos = datos.Movimientos;//Determina cuantos movimientos tiene la aspiradora
+                ImagenesSectores();
+                ActualizarBateria(datos.Movimientos, 3);
+                PosicionActual(datos.Zona);
+                actualizar_datos(1);//Posicion inicial
+                Thread.Sleep(1000);
                 aspirar.escogerMoverse();
+
             }
-            else if(button1.Text == "Apagar")
+            else if (Comenzar.Text == "Apagar")
             {
                 encendido = false;
-                button1.Text = "Comenzar";
+                Comenzar.Text = "Comenzar";
                 MessageBox.Show("Finalizado", "Estatus");
                 Finalizar.Visible = true;
                 actualizar_datos(2); // Posicion final
             }
 
-            
+
         }
 
         //Actualizar Bateria

@@ -37,8 +37,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.informe = new System.Windows.Forms.Button();
-            this.Media = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.Media)).BeginInit();
+            this.Media = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listResult
@@ -53,9 +52,10 @@
             this.listResult.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listResult.ForeColor = System.Drawing.Color.DarkCyan;
             this.listResult.HideSelection = false;
-            this.listResult.Location = new System.Drawing.Point(12, 12);
+            this.listResult.Location = new System.Drawing.Point(16, 15);
+            this.listResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listResult.Name = "listResult";
-            this.listResult.Size = new System.Drawing.Size(598, 218);
+            this.listResult.Size = new System.Drawing.Size(796, 267);
             this.listResult.TabIndex = 0;
             this.listResult.UseCompatibleStateImageBehavior = false;
             this.listResult.View = System.Windows.Forms.View.Details;
@@ -99,9 +99,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(634, 55);
+            this.label1.Location = new System.Drawing.Point(845, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 21);
+            this.label1.Size = new System.Drawing.Size(130, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Media Global";
             // 
@@ -110,9 +111,10 @@
             this.informe.BackColor = System.Drawing.Color.DarkCyan;
             this.informe.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.informe.ForeColor = System.Drawing.Color.White;
-            this.informe.Location = new System.Drawing.Point(628, 162);
+            this.informe.Location = new System.Drawing.Point(837, 199);
+            this.informe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.informe.Name = "informe";
-            this.informe.Size = new System.Drawing.Size(108, 35);
+            this.informe.Size = new System.Drawing.Size(144, 43);
             this.informe.TabIndex = 3;
             this.informe.Text = "Ver Informe";
             this.informe.UseVisualStyleBackColor = false;
@@ -120,32 +122,27 @@
             // 
             // Media
             // 
-            this.Media.BackColor = System.Drawing.Color.DarkCyan;
-            this.Media.DecimalPlaces = 2;
-            this.Media.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Media.ForeColor = System.Drawing.Color.White;
-            this.Media.Location = new System.Drawing.Point(631, 88);
+            this.Media.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Media.Location = new System.Drawing.Point(844, 116);
             this.Media.Name = "Media";
-            this.Media.ReadOnly = true;
-            this.Media.Size = new System.Drawing.Size(108, 26);
+            this.Media.Size = new System.Drawing.Size(130, 30);
             this.Media.TabIndex = 4;
-            this.Media.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Resultados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(751, 249);
+            this.ClientSize = new System.Drawing.Size(1001, 306);
             this.Controls.Add(this.Media);
             this.Controls.Add(this.informe);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listResult);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Resultados";
             this.Text = "Resultados";
-            ((System.ComponentModel.ISupportInitialize)(this.Media)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +159,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button informe;
-        private System.Windows.Forms.NumericUpDown Media;
+        private System.Windows.Forms.TextBox Media;
     }
 }

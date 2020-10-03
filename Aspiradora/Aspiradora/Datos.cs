@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Aspiradora
 {
-    public partial class Form2 : Form
+    public partial class Datos : Form
     {
         int zona;
         int movimientos;
         bool[] sucios = { false, false };
-        public Form2()
+        public Datos()
         {
             InitializeComponent();
             zona = 0;

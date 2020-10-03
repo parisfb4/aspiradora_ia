@@ -13,22 +13,21 @@ namespace Aspiradora
 {
     public class Vacuum
     {
-        private Point posicionExacta { get; set; } // (x,y)
-        private int movimientos { get; set; } // 
+        //private Point posicionExacta { get; set; } // (x,y)
+        private int movimientos; // 
         private int[] registro; //PosicionAnterior - EstadoAnterior 
-        int band_limpio;
+        //int band_limpio;
 
         #region sensores
-        private int ubicacionEntorno { get; set; } // si es estado de carga, a o b
-        private bool espacioEncontrado { get; set; } // 1 Limpio o  0 sucio 
+        private int ubicacionEntorno; // si es estado de carga, a o b
+        private bool espacioEncontrado; // 1 Limpio o  0 sucio 
         int vidaMax = 200;
         int contador;
         int opcion;
         bool bandera1 = false;
         Random rnd;
 
-        Form1 control;
-        Form2 datos;
+        Main control;
         Entorno entorno;
 
         public bool estaLimpio()
@@ -39,7 +38,9 @@ namespace Aspiradora
 
         #region Actuadores
         private int estado { get; set; }            // limpiando, cargar, standby
-
+        public int UbicacionEntorno { get => ubicacionEntorno; set => ubicacionEntorno = value; }
+        public bool EspacioEncontrado { get => espacioEncontrado; set => espacioEncontrado = value; }
+        public int Movimientos { get => movimientos; set => movimientos = value; }
 
         public void limpiar()
         {
@@ -225,25 +226,22 @@ namespace Aspiradora
             //Verificar locacion
             if (!entorno.estaLimpioEspacio(ubicacionEntorno))
             {
-                band_limpio = 1;
+                //band_limpio = 1;
                 limpiar();
             }
             else
             {
-                band_limpio = 0;
+                //band_limpio = 0;
                 escogerMoverse();
             }
 
         }
         #endregion
 
-        public Vacuum(object form1, object entorno1, object data)
+        public Vacuum(object form1, object entorno1)
         {
-            control = (Form1)form1;
+            control = (Main)form1;
             entorno = (Entorno)entorno1;
-            datos = (Form2)data;
-            movimientos = datos.Movimientos;
-            ubicacionEntorno = datos.Zona; //Estado en donde ingreso el usuario
             estado = 0; //
             registro = new int[2]; //Movimiento 
             registro[0] = 0;

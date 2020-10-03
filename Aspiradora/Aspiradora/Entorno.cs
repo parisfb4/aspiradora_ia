@@ -12,14 +12,10 @@ namespace Aspiradora
 
         private bool[] localizacion = {false, false, false};
         private int timeGlobal;
-        Form2 datos;
 
 
-        public Entorno(object data)
+        public Entorno()
         {
-            datos = (Form2)data;
-            localizacion[1] = !datos.Sucios[0];
-            localizacion[2] = !datos.Sucios[1];
 
         }
 

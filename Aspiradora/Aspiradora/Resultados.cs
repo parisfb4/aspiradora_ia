@@ -42,7 +42,7 @@ namespace Aspiradora
                 lista.SubItems.Add(valores[5]);
                 listResult.Items.Add(lista);
             }
-            Media.Value = Convert.ToDecimal(media_global);
+            Media.Text = media_global.ToString();
 
             //Cerrar archivo
             reader.Close();
