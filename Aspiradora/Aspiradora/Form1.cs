@@ -22,6 +22,7 @@ namespace Aspiradora
         private int ID; //Numero de configuracion
         private int movimientos_realizados; //Movimientos realizados desde que inicia hasta que el usuario la apaga o termina su ejecucion. 
         private int limpiezas_realizadas; //Limpiezas realizadas en una corrida
+        private int contador_registros;
 
         private double rendimiento_parcial; //Rendimiento por corrida Limpiezas realizadas / movimientos realizados
         private double media_global; //Media de todo el rendimiento de la aspiradora (rendimientos / no. configuraciones) * 100
@@ -46,6 +47,7 @@ namespace Aspiradora
             //Inicializar datos de puntuacion
             ID = 1;
             movimientos_realizados = 0;
+            contador_registros = 0;
             limpiezas_realizadas = 0;
             rendimiento_parcial = 0.00;
             media_global = 0.00;
@@ -382,7 +384,7 @@ namespace Aspiradora
         {
             //Abrir archivo
             string cadena = "";
-            string ruta = @"C:\Users\omara\OneDrive - Universidad de Guadalajara\Desktop\2020-B\INTELIGENCIA ARTIFICIAL\Practica02\Codigo\aspiradora_ia\Aspiradora\Aspiradora\hola.csv";
+            string ruta = @"Rendimientos.csv";
             string separador = ",";
             StringBuilder salida = new StringBuilder();
 
@@ -410,16 +412,39 @@ namespace Aspiradora
             movimientos_realizados = 0;
             limpiezas_realizadas = 0;
 
+            //Leer los registros
+            Rendimiento();
             //lista.Clear();
         }
 
         private void Finalizar_Click(object sender, EventArgs e)
         {
             //Llamar al form 3 de mostrar informacion
+            ID = ID + contador_registros;
             media_global = (media_global / Convert.ToDouble(ID)) * 100;
 
             resultados.datos(media_global);
             resultados.Show();
+        }
+
+        //leer el rendimiento
+        private void Rendimiento()
+        {
+            //Leer Archivo
+            var reader = new StreamReader(File.OpenRead(@"Rendimientos.csv"));
+            //reader.ReadLine(); // Leer la primera linea (Encabezado)
+
+            while (!reader.EndOfStream)
+            {
+                var linea = reader.ReadLine();
+                var valores = linea.Split(',');
+
+                media_global += Convert.ToDouble(valores[5]);
+                contador_registros++;
+            }
+
+            //Cerrar archivo
+            reader.Close();
         }
     }
 }

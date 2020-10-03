@@ -25,8 +25,8 @@ namespace Aspiradora
         private void ActualizarTabla()
         {
             //Leer Archivo
-            var reader = new StreamReader(File.OpenRead(@"C:\Users\omara\OneDrive - Universidad de Guadalajara\Desktop\2020-B\INTELIGENCIA ARTIFICIAL\Practica02\Codigo\aspiradora_ia\Aspiradora\Aspiradora\hola.csv"));
-            reader.ReadLine(); // Leer la primera linea (Encabezado)
+            var reader = new StreamReader(File.OpenRead(@"Rendimientos.csv"));
+            //reader.ReadLine(); // Leer la primera linea (Encabezado)
 
             while (!reader.EndOfStream)
             {
@@ -43,6 +43,9 @@ namespace Aspiradora
                 listResult.Items.Add(lista);
             }
             Media.Value = Convert.ToDecimal(media_global);
+
+            //Cerrar archivo
+            reader.Close();
         }
 
         public void datos(double valor)
