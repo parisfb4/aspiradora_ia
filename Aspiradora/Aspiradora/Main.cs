@@ -414,7 +414,7 @@ namespace Aspiradora
             //Incrementar ID
             ID++;
             //Sumar rendimiento a media_global
-            media_global += rendimiento_parcial;
+            //media_global += rendimiento_parcial;
 
             //Restablecer valores
             posicion_final = "";
@@ -431,8 +431,8 @@ namespace Aspiradora
         private void Finalizar_Click(object sender, EventArgs e)
         {
             //Llamar al form 3 de mostrar informacion
-            ID = ID + contador_registros;
-            media_global = (media_global / Convert.ToDouble(ID)) * 100;
+            
+            media_global = (media_global / Convert.ToDouble(contador_registros)) * 100;
 
             resultados.datos(media_global);
             resultados.Show();

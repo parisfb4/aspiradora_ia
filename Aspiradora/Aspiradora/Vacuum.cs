@@ -96,7 +96,12 @@ namespace Aspiradora
             //Esta parte es la final del programa
         }
         public void escogerMoverse()
-        {
+        {            //Verificar locacion
+            if (!entorno.estaLimpioEspacio(ubicacionEntorno))
+            {
+                //band_limpio = 1;
+                limpiar();
+            }
             System.Windows.Forms.Application.DoEvents();
             if (!control.Encendido) return;
             //Moverse a la posición donde no estuvo            
